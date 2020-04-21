@@ -10,8 +10,8 @@ jobs:
       VENDOR: 'asus'
       CODENAME: 'X01BD'
       BUILD_LUNCH: 'omni_X01BD-eng'
-      TEST_BUILD: 'true'
-      # PB_OFFICIAL: 'true' # Set true only for Stable Official builds
+      # TEST_BUILD: 'true'
+      PB_OFFICIAL: 'true' # Set true only for Stable Official builds
       # EXTRA_CMD: '' # some required commands like `ls` after `repo sync`, write in single line
       # PB_ENGLISH: 'true' # If you want only English Language
     working_directory: /home/builder/pitchblack
@@ -33,5 +33,5 @@ workflows:
       - build:
           filters:
             branches:
-              only: 'master'
+              only: 'android-9.0'
           context: org-global
