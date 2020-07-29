@@ -5,29 +5,29 @@ jobs:
       - image: fr3akyphantom/droid-builder:latest
     environment:
       MANIFEST_BRANCH: 'android-9.0'
-      # PBRP_BRANCH: '' # optional, if not default 'android-9.0', define other bootable_recovery branch
       VERSION: '3.0.0'
-      VENDOR: 'asus'
+      MAINTAINER: 'PBRP Team'
+      VENDOR: 'ASUS'
       CODENAME: 'X01BD'
-      BUILD_LUNCH: 'omni_X01BD-eng'
-      # TEST_BUILD: 'true'
-      PB_OFFICIAL: 'true' # Set true only for Stable Official builds
-      # EXTRA_CMD: '' # some required commands like `ls` after `repo sync`, write in single line
-      # PB_ENGLISH: 'true' # If you want only English Language
+      FLAVOR: 'eng'
+      PB_OFFICIAL: 'true'
+      CHANGELOG: |
+        - Bringup 3.0 
+        - Source side changes 
+        - Fully Redesigned UI 
+        - New Android like Power Menu (Activated via power key hold) 
+        - Flashlight toggled by Vol up(+) on hold 
+        - Flashlight toggle on Lockscreen 
+        - Etc.
     working_directory: /home/builder/pitchblack
     steps:
       - run:
           name: AIO Build
           command: |
-            echo "Set GitAuth Infos"
-            git config --global user.email $GitHubMail
-            git config --global user.name $GitHubName
-            git config --global credential.helper store
-            git config --global color.ui true
             wget -q https://raw.githubusercontent.com/PitchBlackRecoveryProject/vendor_utils/pb/build.sh
             source build.sh
 workflows:
-  version: 2
+  version: 2.1
   build_and_test:
     jobs:
       - build:
