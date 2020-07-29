@@ -22,7 +22,7 @@
 #
 
 # Device Path
-DEVICE_PATH := device/asus/X01BD
+DEVICE_PATH := device/ASUS/X01BD
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm660
