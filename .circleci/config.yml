@@ -19,6 +19,8 @@ jobs:
         - Flashlight toggled by Vol up(+) on hold 
         - Flashlight toggle on Lockscreen 
         - Etc.
+        - Use Busybox
+        - Fix Flashlight
     working_directory: /home/builder/pitchblack
     steps:
       - run:
